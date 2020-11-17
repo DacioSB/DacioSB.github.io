@@ -12,9 +12,10 @@
 :root{
     --first-color:#017374;
     --second-color: #1F3B4D;
-    --third-color: #D0FEFE;
+    --third-color: #6effff;
     --white-color: #FFF;
-    --semi-white-color: #FAFAFF;
+    --semi-whitecolor: #FAFAFF;
+    --semi-darkcolor: #4c6c83; 
 }
 
 /*Fonts*/
@@ -150,6 +151,9 @@ img{
         background-color: var(--second-color);
         transition: .5s;
     }
+    .checkbox_label{
+        display: none;
+    }
 }
 .nav_item{
     margin-bottom: var(--mb-4);
@@ -173,10 +177,111 @@ img{
 .nav_logo{
     color: var(--second-color);
 }
+.toggle_checkbox_menu{
+    display: flex;
+}
 .nav_toggle{
     color: var(--second-color);
     font-size: 1.5rem;
     cursor: pointer;
+}
+
+input[type="checkbox"]{
+    -webkit-appearance: none;
+    visibility: hidden;
+    display: none;
+}
+.check{
+    margin-right: var(--mb-2);
+    width: 40px;
+    height: 20px;
+    position: relative;
+    display: block;
+    background:  #1F3B4D;
+    cursor: pointer;
+    border-radius: .75rem;
+    overflow: hidden;
+    transition: ease-in 0.5s;
+}
+.check_full-screen{
+    /* margin-right: var(--mb-2); */
+    width: 40px;
+    height: 20px;
+    position: relative;
+    display: block;
+    background:  #1F3B4D;
+    cursor: pointer;
+    border-radius: .75rem;
+    overflow: hidden;
+    transition: ease-in 0.5s;
+}
+input[type="checkbox"]:checked ~ .check_full-screen{
+    background: #FFF;
+
+}
+.check_full-screen::after{
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background:  #1F3B4D;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: 0.5s;
+    transform: translateX(50px);
+}
+
+input[type="checkbox"]:checked ~ .check_full-screen::after{
+    transform: translateX(0px);
+}
+.check_full-screen::before{
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background: var(--white-color);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+input[type="checkbox"]:checked ~ .check_full-screen::before{
+    transform: translateX(-50px);
+}
+
+input[type="checkbox"]:checked ~ .check{
+    background: #FFF;
+
+}
+.check::after{
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background:  #1F3B4D;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: 0.5s;
+    transform: translateX(50px);
+}
+input[type="checkbox"]:checked ~ .check::after{
+    transform: translateX(0px);
+}
+.check::before{
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background: var(--white-color);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+input[type="checkbox"]:checked ~ .check::before{
+    transform: translateX(-50px);
 }
 
 /*Active Menu*/
@@ -208,6 +313,9 @@ img{
 .home_title_color{
     color: var(--first-color);
 }
+.home_typed_color{
+    color: var(--third-color);
+}
 .home_social{
     display: flex;
     flex-direction: column;
@@ -234,7 +342,7 @@ img{
 .button{
     display: inline-block;
     background-color: var(--first-color);
-    color: var(--white-color);
+    color: #FFF;
     padding: .75rem 2.5rem;
     font-weight: var(--font-semi);
     border-radius: .5rem;
@@ -272,12 +380,12 @@ img{
     margin-right: var(--mb-2);
     margin-bottom: var(--mb-3);
     padding: .25rem .5rem;
-    background-color: var(--semi-white-color);
+    background-color: var(--semi-whitecolor);
     border-radius: .25rem;
 }
 .skills_name:hover{
     background-color: var(--second-color);
-    color: var(--semi-white-color);
+    color: var(--semi-whitecolor);
 }
 .skills_img img{
     border-radius: .5rem;
@@ -316,6 +424,7 @@ img{
     border: none;
     outline: none;
     font-size: var(--normal-font-size);
+    color: #FFF;
     cursor: pointer;
     margin-left: auto;
 }
@@ -358,6 +467,9 @@ img{
         height: calc(var(--header-height) + 1rem);
         /* max-width: 1200px; */
     }
+    .nav_menu{
+        display: flex;
+    }
     .nav-list{
         display: flex;
         padding-top: 0;
@@ -366,7 +478,7 @@ img{
         margin-left: var(--mb-6);
         margin-bottom: 0;
     }
-    .nav_toggle{
+    .toggle_checkbox_menu{
         display: none;
     }
     .nav_link{

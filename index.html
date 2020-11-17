@@ -17,6 +17,11 @@
                     <a href="#" class="nav_logo">Dacio</a>
                 </div>
                 <div class="nav_menu" id="nav-menu">
+                    <label class="checkbox_label">
+                        <input type="checkbox" name="theme">
+                        <span class="check_full-screen"></span>
+                    </label>
+
                     <ul class="nav-list">
                         <li class="nav_item">
                             <a href="#home" class="nav_link active">Home</a>
@@ -35,10 +40,18 @@
                         </li>
                     </ul>
                 </div>
+
                 
-                <div class="nav_toggle" id="nav-toggle">
-                    <i class='bx bx-menu' ></i>
+                <div class="toggle_checkbox_menu">
+                    <label>
+                        <input type="checkbox" name="theme_mobile">
+                        <span class="check"></span>
+                    </label>
+                    <div class="nav_toggle" id="nav-toggle">
+                        <i class='bx bx-menu' ></i>
+                    </div>
                 </div>
+                
             </nav>
 
         </header>
@@ -49,7 +62,7 @@
             <!--HOME-->
             <section class="home bd-grid" id="home">
                 <div class="home_data">
-                    <h1 class="home_title">Hi,<br>I am <span class="home_title_color">Dacio</span></br>Developer</h1>
+                    <h1 class="home_title">Hi,<br>I am <span class="home_title_color">Dacio</span></br><span class="home_typed_color"></span></h1>
                     <!--I can change this to cv download-->
                     <a href="#" class="button">Download CV</a>
                 </div>
@@ -94,7 +107,6 @@
                         <span class="skills_name">Spring Boot</span>
                         <span class="skills_name">Python</span>
                         <span class="skills_name">NodeJs</span>
-                        <span class="skills_name"></span>
 
                         <h3 class="skills_subtitle">Mobile</h3>
                         <span class="skills_name">Android Studio</span>
@@ -172,6 +184,22 @@
         <script src="https://unpkg.com/scrollreveal"></script>
 
         <script src="assets/js/index.js"></script>
+        <script src="assets/js/dark-mode.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+        <script>
+            let typed = new Typed(".home_typed_color",{
+                strings: [
+                    "Back-End Developer",
+                    "Front-End Developer",
+                    "Full-Stack Developer",
+                    "Data Scientist"
+                ],
+                typeSpeed: 50,
+                backSpeed: 50,
+                loop: true
+            }
+            );
+        </script>
     </body>
 
     
