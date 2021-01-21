@@ -19,7 +19,6 @@ showMenu("nav-toggle", "nav-menu");
  * Every time i clicked, the menu is inactive and
  */
 const navLink = document.querySelectorAll('.nav_link');
-console.log(navLink);
 function linkAction() {
     //Active link
     navLink.forEach(x => x.classList.remove('active'));
